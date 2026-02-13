@@ -1,0 +1,15 @@
+[package]
+name = "ble-cube"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rstar = "0.12"
+
+[dev-dependencies]
+# Add if you need additional test utilities
+criterion = "0.5"
+
+[[bench]]
+name = "cube_bench"
+harness = false
