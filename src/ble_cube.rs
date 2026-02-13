@@ -117,9 +117,11 @@ impl BleCube {
             .unwrap_or_default()
     }
 
-    /// Get all unique MAC addresses
+    /// Get all unique MAC addresses, sorted lexicographically
     pub fn get_all_macs(&self) -> Vec<[u8; 6]> {
-        self.mac_index.keys().copied().collect()
+        let mut macs: Vec<[u8; 6]> = self.mac_index.keys().copied().collect();
+        macs.sort();
+        macs
     }
 
     // ========== RSSI QUERIES ==========
